@@ -1,6 +1,6 @@
 include Redmine::Export::PDF::IssuesPdfHelper
 
-module PDFExportPatch
+module IssuesPdfHelperPatch
   def self.included(base) # :nodoc:
     base.send(:include, InstanceMethods)
     
@@ -11,15 +11,14 @@ module PDFExportPatch
   
   module InstanceMethods
     include Redmine::I18n
+    include Redmine::Export::PDF
       def issues_to_pdf_with_full_pdf(issues, project, query)
         # export_type is filled by view template thanks to spec_format_link_to
-        puts("ESTOU AQUI AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
         (params['export_type'] == 'Full PDF') ? all_issues_to_pdf(issues, project, query) : issues_to_pdf_without_full_pdf(issues, project, query)
       end
   
      
       def all_issues_to_pdf(issues, project, query)  
-        puts("ESTOU AQUI AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")    
         pdf = ITCPDF.new(current_language)
         title = project ? "#{project} - #{l(:label_issue_plural)}" : "#{l(:label_issue_plural)}"
         pdf.SetTitle(title)
