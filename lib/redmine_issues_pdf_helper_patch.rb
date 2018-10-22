@@ -12,12 +12,12 @@ module IssuesPdfHelperPatch
   module InstanceMethods
     include Redmine::I18n
     include Redmine::Export::PDF
+
       def issues_to_pdf_with_full_pdf(issues, project, query)
         # export_type is filled by view template thanks to spec_format_link_to
         (params['export_type'] == 'Full PDF') ? all_issues_to_pdf(issues, project, query) : issues_to_pdf_without_full_pdf(issues, project, query)
       end
   
-     
       def all_issues_to_pdf(issues, project, query)  
         pdf = ITCPDF.new(current_language)
         title = project ? "#{project} - #{l(:label_issue_plural)}" : "#{l(:label_issue_plural)}"
