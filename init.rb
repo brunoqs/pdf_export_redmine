@@ -10,8 +10,8 @@ Rails.configuration.to_prepare do
 	Redmine::Export::PDF::IssuesPdfHelper.send(:include, IssuesPdfHelperPatch)
 end
 
-Redmine::Plugin.register :pdf_export do
-  name 'Pdf Export plugin'
+Redmine::Plugin.register :pdf_export_redmine do
+  name 'Pdf Export Redmine plugin'
   author 'Bruno Queiroz'
   description 'This is a plugin for Redmine'
   version '0.0.1'

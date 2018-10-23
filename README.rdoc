@@ -1,3 +1,5 @@
-= pdf_export
+= pdf_export_redmine
 
 Short update of this code: https://code.google.com/archive/p/a-studio/downloads
+
+Feel free to contribute. :)
