@@ -4,6 +4,8 @@ require 'redmine'
 require 'redmine_other_formats_builder_patch'
 require 'redmine_issues_pdf_helper_patch'
 
+require_dependency 'pdf_export_redmine/hooks'
+
 Rails.configuration.to_prepare do
 	Redmine::Views::OtherFormatsBuilder.send(:include, OtherFormatsBuilderPatch)
   
