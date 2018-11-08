@@ -4,7 +4,7 @@ With this plugin you can export all issues with all detailed information
 
 ## Installation
 
-Works on Redmine 3.*
+Works on Redmine 3.4.* 
 
 ```sh
 $ cd /opt/redmine/plugins/
