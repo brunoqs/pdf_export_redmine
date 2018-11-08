@@ -16,7 +16,7 @@ Redmine::Plugin.register :pdf_export_redmine do
   name 'Pdf Export Redmine plugin'
   author 'Bruno Queiroz'
   description 'This is a plugin for Redmine'
-  version '0.0.1'
+  version '0.0.2'
   url 'https://github.com/brunoqs/pdf_export'
   author_url 'https://brunoqs.github.io/'
 end

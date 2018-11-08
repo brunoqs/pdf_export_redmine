@@ -64,7 +64,14 @@ module IssuesPdfHelperPatch
         totals_by_group = query.totals_by_group
         render_table_header(pdf, query, col_width, row_height, table_width)
         previous_group = false
-        result_count_by_group = query.result_count_by_group
+
+        if defined?(query.result_count_by_group)
+          # works on redmine 3.4
+          result_count_by_group = query.result_count_by_group
+        else
+          # works on redmine 3.0 to 3.3
+          result_count_by_group = query.issue_count_by_group
+        end
 
         issue_list(issues) do |issue, level|
           if query.grouped? &&
